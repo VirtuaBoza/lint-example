@@ -19,12 +19,15 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src/**/*.tsx"
   },
   "eslintConfig": {
     "extends": "react-app",
     "rules": {
-      "sort-imports": "warn"
+      "sort-imports": "warn",
+      "no-console": "warn",
+      "no-debugger": "warn"
     }
   },
   "browserslist": {
@@ -51,7 +54,8 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "eslint --fix --max-warnings 0"
+      "eslint --fix --max-warnings 0",
+      "prettier --write"
     ]
   }
 }
